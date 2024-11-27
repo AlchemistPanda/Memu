@@ -2,19 +2,98 @@
 <html>
 <head>
   <title>Substitution Cipher</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #f9f9f9;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #333;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      form {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+    }
+  </style>
 </head>
 <body>
   <h1>Substitution Cipher Tool</h1>
   <form id="cipherForm">
-    <label for="text">Enter Text:</label><br>
-    <input type="text" id="text" required><br><br>
-    <label for="shift">Shift Value:</label><br>
-    <input type="number" id="shift" value="3" required><br><br>
-    <label for="mode">Mode:</label><br>
+    <label for="text">Enter Text:</label>
+    <input type="text" id="text" placeholder="Enter your message" required>
+    
+    <label for="shift">Shift Value:</label>
+    <input type="number" id="shift" value="3" required>
+    
+    <label for="mode">Mode:</label>
     <select id="mode">
       <option value="encode">Encode</option>
       <option value="decode">Decode</option>
-    </select><br><br>
+    </select>
+    
     <button type="button" onclick="processCipher()">Submit</button>
   </form>
   <p id="result"></p>
